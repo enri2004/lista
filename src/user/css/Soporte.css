@@ -1,0 +1,64 @@
+.contenedor {
+    display: flex;
+    position: absolute;
+    justify-content: space-around;
+    align-items: center;
+    top: 0cap;
+    height: 60vh;
+    top: 50%;
+  }
+  
+  .form {
+    display: flex;
+    position: absolute;
+    top: 16%;
+    left: 15%;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1; /* Asegura que el formulario esté por encima de las barras */
+    width: 70%;
+    height:70%;
+  }
+  
+  
+  .form.visible {
+  
+    display: block; /* Mostrar el formulario cuando tenga la clase "visible" */
+    
+}
+.form h2{
+  position: absolute;
+  left: 36%;
+ }
+ .form a{
+  position: absolute;
+  left: 5%;
+  top: 20%;
+ }
+
+  .barra1 {
+    cursor: pointer;
+    position: absolute;
+    left: 20%;
+    top: 10%;
+  }
+  .barra2 {
+    cursor: pointer;
+    position: absolute;
+    left: 60%;
+    top: 10%; 
+  }
+  
+  .recuperar-container {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.recuperar {
+    flex: 10;
+    margin: 0 10px 10px 0; /* Espacio entre elementos */
+    
+}

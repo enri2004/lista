@@ -1,0 +1,51 @@
+.Configuracion{
+    position: absolute;
+    background: transparent;
+    width:23%;
+    height:23%;
+    left: 35%;
+    top: 45%;
+    overflow: hidden;
+    border-radius:50%  ;
+     border: 5px solid black;
+}
+.perfil-imagen{
+    width: 100%; /* La imagen ocupa el 100% del ancho del contenedor */
+    height: 100%; /* La imagen ocupa el 100% de la altura del contenedor */
+    object-fit: contain; /* La imagen se ajusta manteniendo su relación de aspecto */
+    border-radius: 50%; /* hace que la imagen sea un círculo */
+}
+
+
+.Cuadro1{
+    position: absolute;
+    width: 20%;
+    height: 35%;
+    background: transparent;
+    border: 5px solid black ;
+    left: 20%;
+    top: 15%;
+    transform:rotate(-45deg) ;
+}
+
+.Cuadro2{
+    position: absolute;
+    width:20% ;
+    height: 35%;
+    top: 15%;
+    left: 56%;
+    transform:rotate(-45deg);
+    background:transparent;
+    border:5px solid green;
+}
+
+.Cuadro3{
+    position: absolute;
+    width:20%;
+    height:25%;
+    background:transparent;
+    border:5px solid blue;
+    top:75%;
+    left: 38%; 
+
+}

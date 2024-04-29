@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+table{
+    position: absolute;
+    top: 10%;
+    left: 0%;
+}
+
+.modal-custom {
+        max-width: 50%; /* Ajusta el ancho máximo según sea necesario */
+        width: 70%; /* Ajusta el ancho según sea necesario */
+        max-height: 90vh; /* Ajusta la altura máxima según sea necesario */
+        height: 90vh; /* Ajusta la altura según sea necesario */
+        margin: auto; /* Centra la ventana modal horizontalmente */
+    }
+
+    .space {
+        margin-bottom: 50%; /* Ajusta el valor según sea necesario */
+    }
+.button{
+    position: absolute;
+    top: 90%;
+    left: 40%;
+}

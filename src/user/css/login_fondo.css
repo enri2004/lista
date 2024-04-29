@@ -1,0 +1,11 @@
+.contenedor_fondo{
+    position: absolute;
+    width: 50%;
+    top: 0;
+    left: 0;
+}
+.fondo{
+    position: absolute;
+    width: 198.7vh;
+    height: 100vh;
+}

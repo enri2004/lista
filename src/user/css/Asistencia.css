@@ -1,0 +1,21 @@
+  .contenedor {
+    display: flex;
+  }
+  
+  .cuadro {
+    width: 80px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .cuadro.activo {
+    background-color: #007bff;
+    color: #ffffff;
+  }
+  

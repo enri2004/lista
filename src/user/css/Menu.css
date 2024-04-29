@@ -1,0 +1,25 @@
+.menu_2 {
+  position: absolute;
+  display: grid;
+  left: 0;
+  top: 6.5%;
+  width: 12%; /* Establece un ancho mínimo para evitar que el menú se colapse demasiado */
+  height: 94%;
+  background-color: #6fc1c1;
+  transition: width 0.3s ease; /* Agrega una transición suave al cambiar el ancho */
+  z-index: 1;
+}
+
+.menu_2.open {
+  width: 25%; /* Ancho del menú cuando está abierto */
+}
+
+.menu_2-container.open {
+  transform: translateY(0);
+}
+@media screen and (max-width: 768px) {
+  .menu_2 {
+    width: 25%;
+    top: 6.5%; /* Cambia a una unidad relativa cuando el ancho de la ventana sea inferior a 768px */
+  }
+}
