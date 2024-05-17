@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.583335d1.css",
+    "main.js": "/static/js/main.18e1c20e.js",
+    "static/media/Fon.gif": "/static/media/Fon.d12134af1b1334600669.gif",
+    "static/media/tg.png": "/static/media/tg.d62072219c3aeb40e723.png",
+    "static/media/Roll-calls.gif": "/static/media/Roll-calls.23108c539dc1b3c07903.gif",
+    "static/media/perfil.jpg": "/static/media/perfil.caf31d7c9ab0b5908af3.jpg",
+    "static/media/confi.jpg": "/static/media/confi.720cad810b7bd6ad6ac3.jpg",
+    "index.html": "/index.html",
+    "main.583335d1.css.map": "/static/css/main.583335d1.css.map",
+    "main.18e1c20e.js.map": "/static/js/main.18e1c20e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.583335d1.css",
+    "static/js/main.18e1c20e.js"
+  ]
+}
