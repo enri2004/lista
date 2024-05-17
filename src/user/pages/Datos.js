@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Table } from 'reactstrap';
-import { QrReader } from 'react-qr-reader';
+//import { QrReader } from 'react-qr-reader';
 //import {RNCamera} from "react-native-camera"
 import Axios from '../../servers/Axios';
-import Asistencia from '../components/Asistencia';
 
 function App() {
     const [scanResult, setScanResult] = useState('');
