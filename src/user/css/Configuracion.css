@@ -1,51 +1,70 @@
-.Configuracion{
-    position: absolute;
-    background: transparent;
-    width:23%;
-    height:23%;
-    left: 35%;
-    top: 45%;
-    overflow: hidden;
-    border-radius:50%  ;
-     border: 5px solid black;
-}
-.perfil-imagen{
-    width: 100%; /* La imagen ocupa el 100% del ancho del contenedor */
-    height: 100%; /* La imagen ocupa el 100% de la altura del contenedor */
-    object-fit: contain; /* La imagen se ajusta manteniendo su relación de aspecto */
-    border-radius: 50%; /* hace que la imagen sea un círculo */
+.contenedor-configuracion {
+    display: flex;
+    justify-content: space-between; /* Cambiado a space-between */
+    padding: 20px;
+    height: 100%; /* Eliminado el height */
 }
 
 
-.Cuadro1{
-    position: absolute;
-    width: 20%;
-    height: 35%;
-    background: transparent;
-    border: 5px solid black ;
-    left: 20%;
-    top: 15%;
-    transform:rotate(-45deg) ;
+.cuadro1 {
+    margin-top: 10%; /* Cambiado a 10% */
 }
 
-.Cuadro2{
-    position: absolute;
-    width:20% ;
-    height: 35%;
-    top: 15%;
-    left: 56%;
-    transform:rotate(-45deg);
-    background:transparent;
-    border:5px solid green;
+.cuadro1,
+.cuadro2,
+.cuadro3,
+.cuadro4,
+.cuadro5 {
+    width: 260px;
+    height: 300px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Cambiado a 20px */
+    transition: transform 0.3s ease;
+    margin: 10px;
+    margin-top: 10px;
+    
+}
+.cuadro2:hover h1 { /* Añadido */
+    position: absolute; /* Añadido */
+    top: 10px;
+    left: 70px; /* Ajusta la posición del título */
+}
+.cuadro3:hover h1{
+    position: absolute; /* Añadido */
+    top: 10px;
+    left: 25px;
+}
+.cuadro1:hover,
+.cuadro2:hover,
+.cuadro3:hover,
+.cuadro4:hover,
+.cuadro5:hover {
+    transform: translateY(-10px);
 }
 
-.Cuadro3{
-    position: absolute;
-    width:20%;
-    height:25%;
-    background:transparent;
-    border:5px solid blue;
-    top:75%;
-    left: 38%; 
+.letra {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+}
 
+h4 h1{
+    align-items: center;
+    justify-content: center;
+}
+a {
+    text-decoration: none;
+    color: #000;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: blue;
 }

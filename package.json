@@ -8,6 +8,7 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@types/react-qr-reader": "^2.1.7",
     "antd": "^5.15.0",
     "axios": "^1.6.7",
     "bootstrap": "^5.3.3",
@@ -19,8 +20,10 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
+    "react-qr-reader": "^3.0.0-beta-1",
     "react-router-dom": "^6.22.2",
     "react-scripts": "^5.0.1",
+    "react-toastify": "^10.0.5",
     "reactstrap": "^9.2.2",
     "web-vitals": "^2.1.4"
   },

@@ -1,0 +1,230 @@
+
+.Institucion{
+    position: absolute;
+    width: 50%;
+    align-items: center;
+    left: 10%;
+    top: 4%;
+    font-size: 1.3rem;
+}
+.input_Institucion{
+    position: absolute;
+    width: 40%;
+    height: 12%;
+    top: 4%;
+    left: 43%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1.3rem;
+    
+}
+.Semestre{
+    position: absolute;
+    top: 19%;
+    left: 12%;
+    font-size: 1.3rem;
+
+}
+.input_Semestre{
+    position: absolute;
+    top: 19%;
+    left: 41%;
+    width: 40%;
+    height: 12%;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    font-size: 1.3rem;
+    background: transparent;
+}
+
+
+.Materia{
+    position: absolute;
+    top: 35%;
+    left: 13%;
+    font-size:1.3rem;
+}
+.input_Materia{
+    position: absolute;
+    width: 40%;
+    height:12%;
+    top: 35%;
+    left:39%;
+    text-align:center;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    font-size: 1.3rem;
+    background: transparent;
+    
+}
+.Estado{
+    position: absolute;
+    top: 50%;
+    left:20%;
+    font-size: 1.3rem;
+}
+.Active{
+    position: absolute;
+    width:40% ;
+    height:12%;
+    top: 49%;
+    left: 28%;
+    border: none;
+    outline: none;
+    text-align: center;
+    font-size: 1.4rem;
+    background: transparent;
+    
+}
+.Edad{
+    position: absolute;
+    width:50%;
+    align-items: center;
+    left:23%;
+    top: 3%;
+    font-size: 1.3rem;
+}
+
+.Input_Edad{
+     position: absolute;
+    width: 40%;
+    height: 12%;
+    top: 2%;
+    left: 40%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1.3rem;
+    
+}
+
+.Sexo{
+    position: absolute;
+    width: 50%;
+    top: 17%;
+    left: 23%;
+    font-size: 1.3rem;
+}
+.Input_Sexo{
+    position: absolute;
+    width: 40%;
+    height: 12%;
+    top: 17%;
+    left: 40%;
+    border: none;
+    outline: none;
+   background: transparent;
+   font-size: 1.3rem;;
+}
+.Telefono{
+    position: absolute;
+    width: 50%;
+    top: 32%;
+    left: 23%;
+    font-size: 1.3rem;
+}
+.Input_Tele{
+   position: absolute;
+   width: 40%;
+   height: 12%;
+   top: 32%;
+   left: 49%;
+   border: none;
+   outline: none;
+   background:transparent;
+   font-size: 1.3rem;
+}
+.Emael{
+    position: absolute;
+    width: 50%;
+    align-items: center;
+    top: 46%;
+    left: 23%;
+    font-size: 1.3rem;
+}
+.Input_Emael{
+    position: absolute;
+    width: 40%;
+    height: 12%;
+    top: 46%;
+    left: 41%;
+    border: none;
+    outline: none;
+   background: transparent;
+    font-size: 1.3rem;
+}
+.Lugar{
+    position: absolute;
+    width: 50%;
+    align-items: center;
+    top: 59%;
+    left: 23%;
+    font-size: 1.3rem;
+}
+
+.lugar{
+    position: absolute;
+    width: 40%;
+    height: 12%;
+    top: 59%;
+    left: 41%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1.3rem;
+}
+
+.Fecha{
+    position: absolute;
+    width: 100%;
+    top: 69%;
+    left: -10%;
+    font-size: 1.3rem;
+}
+
+.Input_Fecha{
+    position: absolute;
+    width: 40%;
+    height: 12%;
+    top: 69%;
+    left: 49%;
+    border: none;
+    outline: none;
+    background:transparent;
+    font-size: 1.3rem;
+}
+
+.nombre{
+    position: absolute;
+    top: 10%;
+    left:0%;
+    border: none;
+    outline: none;
+    font-size: 35px;
+    background: transparent;
+    text-align: center;
+}
+
+
+
+.container1{
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    top: 10%;
+    clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 0 100%, 0% 50%, 0 0);
+    background: rgb(255, 255, 255);
+    transform: rotate(90deg);
+}
+
+.elemento {
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+/*
+.elemento:active {
+    transform: translateY(40px);
+}*/

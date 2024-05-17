@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
-import th from "../../user/img/confi.jpg";
+import th from "../img/confi.jpg";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Axios from "../../servers/Axios";
-import '../../user/css/Perfil_usuario.css';
-import '../css_admin/Perfil.css'
+import perfil from '../img/perfil.jpg';
+import '../css/Perfil_usuario.css';
 
 function Perfil() {
   const imageCambio = useRef(null);
@@ -93,7 +93,6 @@ function Perfil() {
     }
   };
 */
-
 
   return (
     <div>

@@ -1,17 +1,14 @@
 import React, { useState } from 'react';
 import { Button } from "antd";
 import '../css_admin/Matricula.css';
-import axios from 'axios';
-import Formulario from '../../user/pages/Formulario';
-import QRCode from 'qrcode.react';
+import Axios from '../../servers/Axios';
 
 export default function Matricula() {
 
     const [formData, setFormData] = useState({
         usuario:'',
         contraseña:'',
-        apellido_paterno: '',
-        apellido_materno: '',
+        apellidos: '',
         nombre: '',
         institucion: '',
         materia: '',
@@ -23,6 +20,8 @@ export default function Matricula() {
         edad: '',
         lugar: '',
         roles:'',
+        contraseña1:'',
+        Id_maestro:'',
     });
 
     const handleChange = (e) => {
@@ -35,29 +34,18 @@ export default function Matricula() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const QRCode= generarQR(formData);
-            await axios.post('https://api-rest-htj4.onrender.com/api/saveData', formData);
-            console.log('Datos enviados correctamente');
-            e.target.reset();
-            document.getElementById('codigo-qr').innerHTML=" "
+            await Axios.post('/saveData', {...formData });
 
-        } catch (error) {
-            console.error('Error al enviar los datos', error);
-            // Mostrar mensaje de error al usuario
-        }
+        console.log('Datos enviados correctamente');
+        e.target.reset();
+
+    } catch (error) {
+        console.error('Error al enviar los datos', error);
+        // Mostrar mensaje de error al usuario
+    }
     };
 
-        const generarQR = (formData) => {
-
-            const qrData = [];
-            for (const campo in formData) {
-                const nombreCampo = campo;
-                const valorCampo = formData[campo];
-                qrData.push(`${nombreCampo}= ${valorCampo}`);
-            }
-            const qrValue = qrData.join('\n');
-            return <QRCode value={qrValue} />;
-        };
+    
     
     
    
@@ -68,16 +56,11 @@ export default function Matricula() {
                 <h1 >INGRESAR DATOS DE LOS USUARIOS</h1>
                 
                     <div className ='input'>
-                    <input type="text"  required=" " name="apellido_paterno"  onChange={handleChange} />
-                    <span className='span_apellido'>apellido paterno</span>
+                    <input type="text"  required=" " name="apellido"  onChange={handleChange} />
+                    <span className='span_apellido'>apellidos</span>
                     <i className='i'></i>
                     </div>
-                    <div className='input_materno'>
-                    <input type="text" required=" " name="apellido_materno" onChange={handleChange} />
-                    <span className='span_materno'>apellido materno</span>
-                    <i className="i_materno"></i>
-                    </div>
-
+                
                     <div className='input_Nombre'>
                     <input type="text" required=" " name="nombre"  onChange={handleChange} />    
                     <span className="span_nombre">Nombre</span>
@@ -136,17 +119,21 @@ export default function Matricula() {
                     <span className='span_usuario'>Usuario</span>
                     <i className='i_usuario'></i>
                     </div>
-
+                    <div className='input_contraseña1'>
+                    <input type="tex" required=" "  name="contraseña1" onChange={handleChange} />
+                    <span className='span_contraseña1'>Confirmar contraseña</span>
+                    <i className='i_contraseña1'></i>
+                    </div>
                     <div className='input_contraseña'>
                     <input type="tex" required=" "  name="contraseña" onChange={handleChange} />
                     <span className='span_contraseña'>Contraseña</span>
                     <i className='i_contraseña'></i>
                     </div>
-                    {/*<div className='input_rol'>
-                    <input type="text" required=" "  name="roles" onChange={handleChange} />
-                    <span className='span_rol'>roles</span>
-                    <i className='i_rol'></i>
-                    </div>*/ }
+                    <div className='input_Id_maestro'>
+                    <input type="tex"   name="Id_maestro" onChange={handleChange} />
+                    <span className='span_Id_maestro'>Id_maetro</span>
+                    <i className='i_Id_maestro'></i>
+                    </div>
                     
 
                 <div className='input_rol'>
@@ -167,14 +154,11 @@ export default function Matricula() {
                     </div>
                     </div>
                 
-                
+                    <input type="hidden" name="qrValue" value={formData.qrValue} />
+
                 <Button type="primary" htmlType="submit" className="boton1" >enviar</Button>
             </form>}
-            {formData.roles&&(
-                <div className='qr'>
-            {generarQR(formData) 
-       }       </div>)
-             } 
+             
         </div>
     )
 }

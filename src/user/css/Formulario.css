@@ -1,3 +1,4 @@
+
 *{
     margin: 0;
     padding: 0;
@@ -17,40 +18,16 @@ body{
     position: relative;
     width: 370px;
     height: 450px;
-    background: #23242a;
-    border-radius:50px 5px;
+    background: rgba(255, 255, 255, 0.438); /* Adjust the opacity (0.8 for 80% transparency) */
+    border-radius: 50px 5px;
     overflow: hidden;
     z-index: 10;
-}
-
-.Formulario_1::before{
-    content: '';
-    position: absolute;
-    top:-50%;
-    left: -50%;
-    width: 370px;
-    height:450px;
-    background: linear-gradient(60deg,transparent,#45f3ff,#45f3ff);
-    transform-origin: bottom right;
-    animation: animate 2s linear infinite;
-}
-
-.Formulario_1::after{
-    content: '';
-    position: absolute;
-    top:-50%;
-    left: -50%;
-    width: 370px;
-    height:450px;
-    background: linear-gradient(60deg,transparent,#d9138a,#d9138a);
-    transform-origin: bottom right;
-    animation: animate 2s linear infinite;
-    animation-delay: -3s;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .roll-calls{
     position: absolute;
-    color: #7fff00;
+    color: #0a0b0b;
     font-size: 30px;
     font-weight: 500;
     top: 0;
@@ -58,14 +35,15 @@ body{
     z-index: 10;
 }
 
-/*.icono-1,
+.icono-1,
 .icono-2 {
     position: absolute;
-    top: 50%;
-    left: 10px;
+    top: 110%;
+    left: 250px;
     transform: translateY(-50%);
-    color: #fff;
-}*/
+    color: #241e1e;
+    z-index: 10;
+}
 .inputs {
     position: relative;
     width: 300px;
@@ -75,8 +53,8 @@ body{
 .inputs input {
     position: relative;
     width: 100%;
-    top: -40px;
-    padding: 05px 10px 10px;
+    top: 30px;
+    padding: 10px 10px 10px;
     background:transparent;
     border: none;
     outline: none;
@@ -90,13 +68,13 @@ input[type="submit"]
 {
     position: relative;
     width: 90%;
-    top: 10%;
+    top: 20%;
     font-size: 20px;
     border: none;
     outline: none;
-    background: #bbff00;
+    background: #00e5ff;
     padding: 5px;
-    margin-top: 40px;
+    margin-top: 70px;
     border-radius: 90px;
     font-weight: 600;
     cursor: pointer;
@@ -114,8 +92,8 @@ input[type="submit"]:active{
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-}
-*/
+}*/
+
 .boton:hover {
     background-color: #1c1c1c;
 }
@@ -133,7 +111,7 @@ input[type="submit"]:active{
     position: absolute;
     inset: 5px;
     border-radius: 50px 5px;
-    background: #28292d;
+    background: transparent;
     z-index: 10;
     padding: 30px 30px;
     display: flex;
@@ -144,17 +122,17 @@ input[type="submit"]:active{
     position: absolute;
     top: 90%;
     left: 10%;
-    color: rgb(36, 203, 64);
+    color: rgb(10, 14, 11);
     
 }
 
 .Formulario_2 span{
     position: absolute;
-    left: 0;
-    top: -20px;
+    left: 28px;
+    top: 19px;
     padding: 10px 5px 5px;
     font-size: 1em;
-    color: blue;
+    color: rgb(11, 11, 12);
     pointer-events: none;
     letter-spacing: 0.05em;
     transform: 0.5s;
@@ -162,17 +140,18 @@ input[type="submit"]:active{
 
 .Formulario_2 input:valid ~ span,
 .Formulario_2 input:focus ~ span{
-    color: #45f3ff;
+    color: #0d0f0f;
     transform: translateX(-10px) translateY(-20px);
     font-size: 0.75em;
 }
 .Formulario_1 i{
     position: absolute;
     left: 0;
+    top: 60px;
     width: 100%;
     height: 2px;
     border-radius: 7px;
-    background: #7fff00;
+    background: #eef1eb;
     border-radius: 0.5s;
     pointer-events: none;
     z-index: 9;
@@ -182,14 +161,5 @@ input[type="submit"]:active{
 .Formulario_2 input:focus ~ i{
     height: 40px;
     position: absolute;
-    top: -15px;
+    top: 25px;
 }
-
-
-
-
-
-
-
-
-

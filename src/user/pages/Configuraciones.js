@@ -1,80 +1,62 @@
 import React, { useRef, useState } from 'react';
-import { Link, useNavigate  } from 'react-router-dom';
-import '../css/Configuracion.css'
-import confi from '../img/confi.jpg'
+import '../css/Configuracion.css'; // Asegúrate de tener la ruta correcta hacia tu archivo CSS
+import confi from '../img/confi.jpg';
 
-function Configuracion(){
-//    const Navigate= useNavigate ("")
-    const imageCambio =useRef(null);
-    const [imagen,setImagen]=useState(" ");
-    const  [selectImagen, setSelectImage]=useState(null)
+function Configuracion() {
+    const cambioImagen = useRef(null);
+    const [imagen, setImagen] = useState("");
+    const [seleccionarImagen, setSeleccionarImagen] = useState(null);
 
+    const cambio = () => {
+        cambioImagen.current.click();
+    }
 
-const Cambio =()=>{
-    imageCambio.current.click();
-    
-}
+    const hadleImagenChage = (e) => {
+        const files = e.target.files[0];
+        console.log(files);
+        setSeleccionarImagen(files);
+        setImagen(URL.createObjectURL(files));
+    }
 
-const handleCambio=(e)=>{
-    const file=e.target.files[0];
-    console.log(file);
-    setSelectImage(file);
-    setImagen(URL.createObjectURL(file))
-}
-/*const enviar=()=>{
-    Navigate("/Home");
-}*/
-
-    return(
-
-        <>
-        <div className='Configuracion' onClick={Cambio}>
-            <input type='file' ref={imageCambio} onChange={handleCambio} style={{display:"none"}} />
-            {imagen ? <img src={imagen} alt='' className='perfil-imagen'/>:<img src={confi} alt='confi' className='perfil-imagen'/>}
-        </div>
-        <div className='Cuadro1'>
-        <div>
-        <div style={{position:"absolute",top:"50px",left:"162px",transform:"rotate(45deg)"}}>
-            <label >idioma</label>
-            <select >
-                <option>Español</option>
-                <option>Engles</option>
-                <option>frances</option>
-                <option>portuges</option>
-                <option>chino</option>
-                <option>japones</option>
-            </select>
-        </div>
-
+    return (
+        <div className="contenedor-configuracion">
+            
+            <div className='cuadro1' onClick={cambio}>
+                <input type='file' ref={cambioImagen} onChange={hadleImagenChage} className='imagen' style={{ display: "none" }} />
+                {imagen ? <img alt='' src={imagen} /> : <img className='imagen' src={confi} alt='confi' />}
             </div>
-        </div >
-        <div className='Cuadro2' >
-            <div style={{ position:"absolute",left:"200px", top:"40px",transform:"rotate(45deg)"}}>       
-                 <label><Link to="/soporte">soporte</Link></label>
+            <div className='cuadro2'>
+                <h1>Idioma</h1>
+                <div className='letra'>
+                    <h4>español</h4>
+                    <h4>ingles</h4>
+                    <h4>japones</h4>
+                    <h4>frances</h4>
+                </div>
             </div>
 
+            <div className='cuadro3'>
+                <h1>personalizar</h1>
+                <h4>color</h4>
+                <h4>letra</h4>
+            </div>
+
+            <div className="cuadro4">
+                <h1>Seguridad</h1>
+                <h4>pivacidad</h4>
+                <h4>norma y politica</h4>
+                <h4>condiciones</h4>
+            </div>
+
+            <div className="cuadro5">
+                <h1>soporte</h1>
+                <a href='http://localhost:3001/Soporte'><h4>recuperar contraseña</h4></a>
+                <h4>cambiar informacion</h4>
+                <h4>obtener tu informacion</h4>
+                <a href='http://localhost:3001/Soporte'><h4>quejas o sugerencia</h4></a>
+            </div>
         </div>
-        
-        <div className="Cuadro3">
-        <div>
-            <label>privasidad</label>
-            <label>Información del titular del sitio</label>
-            <label>Tipo de datos recopilados</label>
-            <label>Propósito de la recopilación de datos</label>
-            <label>Consentimiento del usuario</label>
-            <label>Seguridad de los datos</label>
-            <label>Derechos del usuario </label>
-            <label>Cookies y tecnologías de seguimiento</label>
-           { /*<button onClick={enviar}>enviar</button>*/}
-        </div>
-        </div>
-
-
-
-
-
-        
-   
-   </> )
+    );
 }
+
 export default Configuracion;

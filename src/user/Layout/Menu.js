@@ -26,9 +26,9 @@ export default function MenuPrincipal() {
         <div>
             <Desplazamiento isOpen={isOpen} toggleMenu={toggleMenu} />
             <AntMenu className="menu_2" style={{ display: isOpen ? 'grid' : 'none', top: isOpen }}>
-                <AntMenu.Item key="/Perfil" icon={<IoPerson />}>Perfil</AntMenu.Item>
-                <AntMenu.Item key="/Home"icon={<RiHomeOfficeFill />}>Casa</AntMenu.Item>
-                <AntMenu.Item key="/Lista_Alumnos" icon={<FaDatabase />}>Lista de Alumnos</AntMenu.Item>
+                <AntMenu.Item key="/Perfil" icon={<IoPerson />}><Link to="/Perfil/usuario">Perfil</Link></AntMenu.Item>
+                <AntMenu.Item key="/Casa"icon={<RiHomeOfficeFill />}><Link to="/Casa">Casa</Link></AntMenu.Item>
+                <AntMenu.Item key="/Lista_Alumnos" icon={<FaDatabase />}><Link to="/asistencia">Lista de Alumnos</Link></AntMenu.Item>
                 <AntMenu.Item key="/Agregar_Datos" icon={<BsDatabaseFillAdd />} ><Link to="/Tabla">Agregar Datos</Link></AntMenu.Item>
                 <AntMenu.Item key="/Datos_alumno" icon={<BsFillClipboard2DataFill />}><Link to="/Datos_alumnos">Datos de alumno</Link></AntMenu.Item>
                 <AntMenu.Item key="/Configuracion" icon={<GrConfigure />}><Link to='/Configuarcaion'>Configuaracion</Link></AntMenu.Item>

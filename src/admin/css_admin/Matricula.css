@@ -77,7 +77,7 @@ body{
     top: 13%;
 }
 
-.input_materno input{
+.input_Nombre input{
     position: absolute;
     top: 13%;
     left: 23%;
@@ -91,7 +91,7 @@ body{
     letter-spacing: 0.5em;
     z-index: 10;
     cursor: pointer;
-}.contenedor .span_materno{
+}.contenedor .span_nombre{
     position:absolute;
     top:12%;
     left:24%;
@@ -101,13 +101,13 @@ body{
     transform: 0.5s;
     letter-spacing: 0.05em;
     color: blue;
-}.contenedor input:valid ~ .span_materno,
-.contenedor input:focus ~ .span_materno{
+}.contenedor input:valid ~ .span_nombre,
+.contenedor input:focus ~ .span_nombre{
     color:cornflowerblue;
     transform: translateX(-10px) translateY(-20px);
     font-size: 0.86em;
 }
-.contenedor .i_materno{
+.contenedor .i_nombre{
     position: absolute;
     top: 18%;
     left: 23%;
@@ -119,15 +119,15 @@ body{
     border-radius:0.5s;
     z-index:9;
 }  
-.contenedor input:valid ~ .i_materno,
-.contenedor input:focus ~ .i_materno{
+.contenedor input:valid ~ .i_nombre,
+.contenedor input:focus ~ .i_nombre{
     height: 40px;
     top: 13%;
     position:absolute;
 }
 
 
-.input_Nombre input {
+.input_data input {
     position: absolute;
     width: 15%;
     top: 13%;
@@ -141,7 +141,7 @@ body{
     letter-spacing: 0.5em;
     z-index: 10;
     cursor: pointer;
-}.contenedor .span_nombre{
+}.contenedor .span_data{
     position: absolute;
     left: 46%;
     top: 12%;
@@ -151,13 +151,13 @@ body{
     pointer-events: none;
     letter-spacing: 0.05em;
     transform: 0.5s;
-}.contenedor input:valid ~ .span_nombre,
-.contenedor input:focus ~ .span_nombre{
+}.contenedor input:valid ~ .span_data,
+.contenedor input:focus ~ .span_data{
     color: #e91799;
     transform: translateX(-10px) translateY(-20px);
     font-size: 0.86em;
     left: 43%;
-}.contenedor .i_nombre{
+}.contenedor .i_data{
     position: absolute;
     left: 42%;
     top: 18%;
@@ -168,8 +168,8 @@ body{
     border-radius: 0.5s;
     pointer-events: none;
     z-index: 9;    
-}.contenedor input:valid ~ .i_nombre,
-.contenedor input:focus ~ .i_nombre{
+}.contenedor input:valid ~ .i_data,
+.contenedor input:focus ~ .i_data{
     height: 40px;
     position: absolute;
     top: 13%;
@@ -180,8 +180,8 @@ body{
 .input_instituto input {
     position: absolute;
     width: 15%;
-    top: 30%;
-    left: 3%;
+    top: 13%;
+    left: 80%;
     padding: 05px 10px 10px;
     background:transparent;
     border: none;
@@ -193,8 +193,8 @@ body{
     cursor: pointer;
 }.contenedor .span_instituto{
     position: absolute;
-    left: 7%;
-    top: 29%;
+    left: 80%;
+    top: 13%;
     padding: 10px 5px 5px;
     font-size: 1em;
     color: blue;
@@ -206,11 +206,11 @@ body{
     color: #c617e9;
     transform: translateX(-10px) translateY(-20px);
     font-size: 0.86em;
-    left: 4%;
+    left: 80%;
 }.contenedor .i_instituto{
     position: absolute;
-    left: 3%;
-    top: 35%;
+    left: 80%;
+    top: 18%;
     width: 15%;
     height: 4px;
     border-radius: 7px;
@@ -222,14 +222,14 @@ body{
 .contenedor input:focus ~ .i_instituto{
     height: 40px;
     position: absolute;
-    top: 30%;
+    top: 14%;
 }
 
 .input_edad input {
     position: absolute;
     width: 15%;
     top: 13%;
-    left: 80%;
+    left: 60%;
     padding: 05px 10px 10px;
     background:transparent;
     border: none;
@@ -241,8 +241,8 @@ body{
     cursor: pointer;
 }.contenedor .span_edad{
     position: absolute;
-    left: 85%;
-    top: 12%;
+    left: 66%;
+    top: 10%;
     padding: 10px 5px 5px;
     font-size: 1em;
     color: blue;
@@ -254,10 +254,10 @@ body{
     color: #c617e9;
     transform: translateX(-10px) translateY(-20px);
     font-size: 0.86em;
-    left: 82%;
+    left: 62%;
 }.contenedor .i_edad{
     position: absolute;
-    left: 80%;
+    left: 60%;
     top: 18%;
     width: 15%;
     height: 4px;
@@ -485,7 +485,7 @@ body{
 .input_materia input{
     position:absolute;
     width: 15%;
-    top:45%;
+    top:30%;
     left:3%;
     padding:05px 10px 10px;
     background:transparent;
@@ -499,7 +499,7 @@ body{
 .contenedor .span_materia{
     position:absolute;
     left:7.5%;
-    top:43.5%;
+    top:28.5%;
     color:blue;
     padding:10px 5px 5px;
     transform: 0.5s;
@@ -515,7 +515,7 @@ body{
 .contenedor .i_materia{
     position: absolute;
     left:3%;
-    top: 50%;
+    top: 35%;
     width:15%;
     height: 4px;
     background:lightseagreen;
@@ -526,14 +526,14 @@ body{
 .contenedor input:valid ~ .i_materia,
 .contenedor input:focus ~ .i_materia{
     height: 40px;
-    top: 45%;
+    top: 30%;
     position: absolute;
 }
 
 
 .input_semestre input{
     position:absolute;
-    left:23%;
+    left:3%;
     top:45%;
     width:15%;
     padding:10px 5px 5px;
@@ -549,7 +549,7 @@ body{
 
 .contenedor .span_semestre{
     position:absolute;
-    left:27%;
+    left:3%;
     top:44%;
     color:blue;
     padding:10px 5px 5px;
@@ -560,12 +560,12 @@ body{
 .contenedor input:focus ~ .span_semestre{
     color:rgb(45, 32, 224);
     transform:translateX(-10px) translateY(-20px);
-    left: 23%;
+    left: 3%;
     font-size:0.86em;
 }
 .contenedor .i_semestre{
     position: absolute;
-    left:23%;
+    left:3%;
     top: 50%;
     width:15%;
     height: 4px;
@@ -587,7 +587,7 @@ body{
     position:absolute;
     width: 15%;
     top:45%;
-    left:42%;
+    left:23%;
     padding:05px 10px 10px;
     background:transparent;
     z-index:10;
@@ -599,7 +599,7 @@ body{
 }
 .contenedor .span_usuario{
     position:absolute;
-    left:46%;
+    left:23%;
     top:44%;
     color:blue;
     padding:10px 5px 5px;
@@ -610,12 +610,12 @@ body{
 .contenedor input:focus ~ .span_usuario{
     color:black;
     transform:translateX(-10px) translateY(-20px);
-    left: 42%;
+    left: 23%;
     font-size:0.86em;
 }
 .contenedor .i_usuario{
     position: absolute;
-    left:42%;
+    left:23%;
     top: 50%;
     width:15%;
     height: 4px;
@@ -639,7 +639,7 @@ body{
     position:absolute;
     width: 15%;
     top:45%;
-    left:61%;
+    left:45%;
     padding:05px 10px 10px;
     color: #23242a;
     background:transparent;
@@ -652,7 +652,7 @@ body{
 }
 .contenedor .span_contraseña{
     position:absolute;
-    left:64%;
+    left:42%;
     top:44%;
     color:blue;
     padding:10px 5px 5px;
@@ -663,12 +663,12 @@ body{
 .contenedor input:focus ~ .span_contraseña{
     color:rgb(0, 0, 0);
     transform:translateX(-10px) translateY(-20px);
-    left: 61%;
+    left: 42%;
     font-size:0.86em;
 }
 .contenedor .i_contraseña{
     position: absolute;
-    left:61%;
+    left:42%;
     top: 50%;
     width:15%;
     height: 4px;
@@ -684,55 +684,6 @@ body{
     position: absolute;
 }
 
-
-.input_data input{
-    position: absolute;
-    width:15%;
-    top: 14%;
-    left: 60%;
-    padding:05px 10px 10px;
-    background:transparent;
-    z-index:10;
-    border: none;
-    outline: none;
-    letter-spacing: 0.5em;
-    font-size:1em;
-    cursor: pointer;
-}
-.contenedor .span_data{
-    position: absolute;
-    top:10%;
-    left:62%;
-    color: blue;
-    padding: 10px 5px 5px;
-    letter-spacing: 0.05em;
-    transform: 0.5s;
-}
-.contenedor input:valid ~ .span_data, 
-.contenedor input:focus ~ .span_data{
-    color: #15de7d;
-    transform:translateX(-10px) translateY(-20px);
-    font-size: 0.86em;
-    left: 60%;
-    top: 12%;
-}
-.contenedor .i_data{
-    position: absolute;
-    width:15%;
-    height: 4px;
-    background: #c617e9;
-    left: 60%;
-    top: 18%;
-    border-radius:7px ;
-    border-radius:0.5s;
-    z-index:9;
-}
-.contenedor input:valid ~ .i_data,
-.contenedor input:focus ~ .i_data{
-    height: 40px;
-    top: 13%;
-    position: absolute;   
-}
 h1{
     position: absolute;
     top: 0%;
@@ -759,7 +710,57 @@ h1{
 }
 
 
-.input_rol input{
+.input_contraseña1 input{
+    position: absolute;
+    width:15%;
+    top: 45%;
+    left: 61%;
+    padding:05px 10px 10px;
+    background:transparent;
+    z-index:10;
+    border: none;
+    outline: none;
+    letter-spacing: 0.5em;
+    font-size:1em;
+    cursor: pointer;
+}
+.contenedor .span_contraseña1{
+    position: absolute;
+    top:44%;
+    left:62%;
+    color: blue;
+    padding: 10px 5px 5px;
+    letter-spacing: 0.05em;
+    transform: 0.5s;
+}
+.contenedor input:valid ~ .span_contraseña1, 
+.contenedor input:focus ~ .span_contraseña1{
+    color: #15de7d;
+    transform:translateX(-10px) translateY(-20px);
+    font-size: 0.86em;
+    left: 61%;
+    top: 43%;
+}
+.contenedor .i_contraseña1{
+    position: absolute;
+    width:15%;
+    height: 4px;
+    background: #c617e9;
+    left: 61%;
+    top: 50%;
+    border-radius:7px ;
+    border-radius:0.5s;
+    z-index:9;
+}
+.contenedor input:valid ~ .i_contraseña1,
+.contenedor input:focus ~ .i_contraseña1{
+    height: 40px;
+    top: 45%;
+    position: absolute;   
+}
+
+
+.input_Id_maestro input{
     position: absolute;
     width:15%;
     top: 45%;
@@ -773,7 +774,7 @@ h1{
     font-size:1em;
     cursor: pointer;
 }
-.contenedor .span_rol{
+.contenedor .span_Id_maestro{
     position: absolute;
     top:44%;
     left:80%;
@@ -782,15 +783,15 @@ h1{
     letter-spacing: 0.05em;
     transform: 0.5s;
 }
-.contenedor input:valid ~ .span_rol, 
-.contenedor input:focus ~ .span_rol{
+.contenedor input:valid ~ .span_Id_maestro, 
+.contenedor input:focus ~ .span_Id_maestro{
     color: #15de7d;
     transform:translateX(-10px) translateY(-20px);
     font-size: 0.86em;
     left: 80%;
     top: 43%;
 }
-.contenedor .i_rol{
+.contenedor .i_Id_maestro{
     position: absolute;
     width:15%;
     height: 4px;
@@ -801,9 +802,16 @@ h1{
     border-radius:0.5s;
     z-index:9;
 }
-.contenedor input:valid ~ .i_rol,
-.contenedor input:focus ~ .i_rol{
+.contenedor input:valid ~ .i_Id_maestro,
+.contenedor input:focus ~ .i_Id_maestro{
     height: 40px;
     top: 45%;
     position: absolute;   
+}
+.input_rol{
+    position: absolute;
+    width:10%;
+    height:10% ;
+    left:2%;
+    top:55% ;
 }

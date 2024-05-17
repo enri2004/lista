@@ -2,12 +2,13 @@
   position: absolute;
   display: grid;
   left: 0;
-  top: 6.5%;
+  top: 6%;
   width: 12%; /* Establece un ancho mínimo para evitar que el menú se colapse demasiado */
   height: 94%;
-  background-color: #6fc1c1;
+  background-color:  rgb(126, 118, 199);
   transition: width 0.3s ease; /* Agrega una transición suave al cambiar el ancho */
   z-index: 1;
+  font-size: 18px;
 }
 
 .menu_2.open {

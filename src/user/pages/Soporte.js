@@ -2,13 +2,23 @@ import React, { useState } from "react";
 import '../css/Soporte.css'
 import { FaLifeRing, FaKey } from 'react-icons/fa'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Container, Modal, ModalBody, FormGroup, ModalHeader } from 'reactstrap';
+import { Button, Modal, ModalBody, FormGroup, ModalHeader } from 'reactstrap';
 import Gmail from '../img/gmail.png'
+import Axios from "../../servers/Axios"
 
 export default function Soporte() {
     const [mostrarFormularioSoporte, setMostrarFormularioSoporte] = useState(false);
     const [mostrarFormularioRecuperar, setMostrarFormularioRecuperar] = useState(false);
     const [modalmensaje, setModalmensaje]= useState(false);
+    const [formdatos,setFordatos]= useState({
+        usuario:'',
+        apellido_paterno:'',
+        apellido_materno:'',
+        nombre:'',
+        institucion:'',
+        telefono:'',
+        lugar:'',
+    });
 
     const toggleFormularioSoporte = () => {
         setMostrarFormularioSoporte(!mostrarFormularioSoporte);
@@ -22,8 +32,29 @@ export default function Soporte() {
 
     const toggleModal=()=>{
         setModalmensaje(!modalmensaje);
-        console.log("mmmmm")
-      }
+      };
+
+      const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFordatos(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
+    };
+
+    const enviarDatos = async (e) => {
+      e.preventDefault();
+      console.log(formdatos)
+        try {
+            //await axios.post("https://api-rest-htj4.onrender.com/api/correo",formdatos);
+            await Axios.post("/correo",formdatos);
+            
+            console.log("Datos enviados correctamente", );
+            toggleModal();
+        } catch (error) {
+            console.error("Error al enviar los datos", error);
+        }
+    };
 
     return (
         <div className="contenedor">
@@ -48,23 +79,27 @@ export default function Soporte() {
             )}
 
                 <div className="barra2" onClick={toggleFormularioRecuperar}>
-                <FaKey /> Recuperar  
+                <FaKey className="bordered border-dark" /> Recuperar  
                 </div>
                 {mostrarFormularioRecuperar && (
               
-                <form className="form" >
+                <form className="form">
                     <h2>Recuperar</h2>
                 <form class="row g-3 needs-validation" novalidate  style={{position:"absoluta", top:"80px",left:"10px", padding:"10px 10px 10px 10px"}}>
                     <div class="col-md-4">
                       <label for="validationCustom01" class="form-label">Apellido paterno</label>
-                      <input type="text" class="form-control" id="validationCustom01"  required />
+                      <input type="text" class="form-control" name="apellido_paterno" id="validationCustom01"  
+                      onChange={ handleChange}
+                      required />
                       <div class="valid-feedback">
                         Looks good!
                       </div>
                     </div>
                     <div class="col-md-4">
                       <label for="validationCustom02" class="form-label">Apellido materno</label>
-                      <input type="text" class="form-control" id="validationCustom02"  required/>
+                      <input type="text" class="form-control" name="apellido_materno" id="validationCustom02"  required 
+                      onChange={ handleChange}
+                      />
                       <div class="valid-feedback">
                         Looks good!
                       </div>
@@ -73,7 +108,9 @@ export default function Soporte() {
                       <label for="validationCustomUsername" class="form-label">Nombre</label>
                       <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required/>
+                        <input type="text" class="form-control" name="nombre"id="validationCustomUsername" aria-describedby="inputGroupPrepend" required 
+                        onChange={ handleChange}
+                        />
                       </div>
                     </div>
                     
@@ -81,72 +118,68 @@ export default function Soporte() {
                       <label for="validationCustomUsername" class="form-label">Lugar</label>
                       <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required/>
+                        <input type="text" class="form-control" name="lugar"id="validationCustomUsername" aria-describedby="inputGroupPrepend" required 
+                        onChange={ handleChange}
+                        />
                       </div>
                     </div>
                     <div class="col-md-4">
-                      <label for="validationCustomUsername" class="form-label">correo</label>
+                      <label for="validationCustomUsername" class="form-label">telefono</label>
                       <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required/>
+                        <input type="text" class="form-control" name="telefono" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required
+                        onChange={ handleChange}
+                        />
                       </div>
                     </div>
                     <div class="col-md-4">
                       <label for="validationCustomUsername" class="form-label">escuela</label>
                       <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required/>
+                        <input type="text" class="form-control" name="institucion" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required 
+                        onChange={ handleChange}
+                        />
                       </div>
                     </div>
                     <div class="col-md-4">
                       <label for="validationCustomUsername" class="form-label">Usuario</label>
                       <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required/>
+                        <input type="text" class="form-control" name="usuario" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required
+                        onChange={ handleChange}
+                        />
                       </div>
                     </div>
-                    
-                    <div class="col-md-4">
-                      <label for="validationCustomUsername" class="form-label">ultima Contraseña</label>
-                      <div class="input-group has-validation">
-                        <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required/>
-                      </div>
-                    </div>
-
 
                     <div class="col-12">
-                      <Button class="btn btn-primary"  onClick={()=>toggleModal()}>Recuperar</Button>
+                      <Button class="btn btn-primary"  onClick={enviarDatos}>Recuperar</Button>
                     </div>
                   </form>
-
-      
                     
-</form>
-
+                </form>
             )}
 
-<Modal isOpen={modalmensaje} toggle={toggleModal} className="modal-custom" >
-                  <ModalHeader  toggle={toggleModal}>
+            <Modal isOpen={modalmensaje} toggle={toggleModal} className="modal-custom" >
+                <ModalHeader  toggle={toggleModal}>
                     <ModalBody>
-                      <h2>se enviara la contraseña y usuario a tu correo </h2>
-                      
-                      <a href="https://mail.google.com/"> <img
-                       src={Gmail}
-                       alt="Gmail"
-                       style={{width:"150px",height:"150px", position:"absolute", top:"150px", left:"250px"}}
-                      
-                      /></a>
-                      <FormGroup>
+                        <h2>Se enviarán los datos de recuperación a tu correo electrónico</h2>
+                        <a href="https://mail.google.com/">
+                            <img
+                                src={Gmail}
+                                alt="Gmail"
+                                style={{width:"150px",height:"150px", position:"absolute", top:"150px", left:"250px"}}
+                            />
+                        </a> 
+                        <FormGroup>
 
-                      </FormGroup>
-                    <div class="space"></div>
-                    <FormGroup>
-                      <div class="space"></div>
-                    </FormGroup>
+                        </FormGroup>
+                        <div class="space"></div>
+                        <FormGroup>
+                            <div class="space"></div>
+                        </FormGroup>
                     </ModalBody>
-                  </ModalHeader>
+                </ModalHeader>
             </Modal>
-              </div>
+        </div>
     );
 }

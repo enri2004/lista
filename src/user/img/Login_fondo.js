@@ -1,5 +1,5 @@
 import React from "react";
-import Fondo from "./Fondo.gif"; // Importa el GIF
+import Fondo from "./perfil.jpg"; // Importa el GIF
 import '../css/login_fondo.css';
 
 export default function fondo() {
