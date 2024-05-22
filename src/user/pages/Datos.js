@@ -34,7 +34,7 @@ function App() {
                 const response = await Axios.get("/Id_maestro", config);
                 const id_maestro = response.data.id_maestro;
 
-                const alumnosResponse = await Axios.get("http://127.0.0.1:3000/alumnos");
+                const alumnosResponse = await Axios.get("https://api-rest-htj4.onrender.com/alumnos");
                 const allData = alumnosResponse.data;
 
                 // Filtrar los datos de los alumnos por el id_maestro

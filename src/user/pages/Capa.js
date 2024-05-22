@@ -1,5 +1,5 @@
 import React from "react";
-import tg from '../img/tg.png';
+//import tg from '../img/tg.png';
 import Roll from '../img/Roll-calls.gif'
 function Capa() {
   return (

@@ -75,24 +75,6 @@ function Perfil() {
     }
   };
 
-/*  
-  const handleUpload = async () => {
-    try {
-      const formData = new FormData();
-      formData.append('avatar', selectedImage);
-
-      const response = await Axios.post(`editar${_id}`, formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      });
-
-      console.log('Respuesta del servidor:', response.data);
-    } catch (error) {
-      console.error('Error al cargar la imagen:', error);
-    }
-  };
-*/
 
   return (
     <div>

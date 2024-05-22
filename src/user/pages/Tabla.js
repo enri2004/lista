@@ -2,23 +2,13 @@ import React from 'react';
 import '../css/Tabla.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Table, Button, Container, Modal, ModalBody, ModalHeader, FormGroup, ModalFooter}from 'reactstrap'
-import QRCode from 'qrcode.react';             
+import Swal from 'sweetalert2';
+import QRCode from 'qrcode.react';   
+          
 import Axios from '../../servers/Axios';
 
-
-const data =[
-  { id: 1, Nombre: "juan diego", Apellidos: "naruto", Matricula: "20000001", QR:""},
-  { id: 2, Nombre: "pepe", Apellidos: "obe punchman", Matricula: "20000002", QR:""},
-  { id: 3, Nombre: "pepe chato", Apellidos: " mushucu tensei", Matricula: "20000003", QR:""},
-  { id: 4, Nombre: "pablito", Apellidos: "padres de familia", Matricula: "20000004", QR:""},
-  { id: 5, Nombre: "ven", Apellidos: "dargonball", Matricula: "20000005", QR:""},
-]
-
-
-
-
 //const URL='https://api-rest-htj4.onrender.com/alumnos';
-const URL='http://127.0.0.1:3000/alumnos'
+const URL='https://api-rest-htj4.onrender.com/alumnos'
 //////////////////// CLASE DE LOS COMPONENTES DE CADA UNO DE LOS REGISTROS////////////////////////////////////
 
 class App extends React.Component{
@@ -169,10 +159,14 @@ insertar = async () => {
         modalInsertar: false
       }), () => {
         console.log('Se ha insertado el nuevo alumno:', nuevoAlumno);
-        // Después de agregar el nuevo alumno, actualizamos los datos filtrados
+        Swal.fire({
+          icon: 'success',
+          title: 'se ha isertado  un alumno nuevo',
+          text: 'El alumno ha sido registrado exitosamente'
+        });
         this.filtrarAlumnos();
       });
-    } else {
+        } else {
       console.error('No se obtuvieron datos del usuario o el Id_maestro es nulo');
     }
   } catch (error) {
@@ -201,6 +195,11 @@ editar=async(dato)=>{
     try{
       const _id=dato._id;
       await Axios.patch(`/alumnos/editar/${_id}`,dato)
+      Swal.fire({
+        icon: 'success',
+        title: 'Modificacion',
+        text: 'los datos ha sido Modificado exitosamente'
+      });
       this.filtrarAlumnos();
     }catch(error){
       console.error("no se puede entrar",error);
@@ -208,45 +207,44 @@ editar=async(dato)=>{
 
 
 }
-//en esta funcion se podra eliminar los datos ingresado
-/*eliminar = async (dato) => {
-  var opcion = window.confirm("¿Desea eliminar estos datos?" + dato.id);
-  if (opcion) {
-    var contador = 0;
-    var lista = this.state.data;
-    lista.map((Registro) => {
-      if (Registro.id == dato.id) {
-        lista.splice(contador, 1);
-      }
-      contador++;
-    });
-    this.setState({ data: lista });
-  }
- 
-}*/
 
-
-/*eliminar= async(_id)=>{
-  try {
-    await Axios.delete(`/alumnos/eliminar/${_id}`);
-    console.log("Alumno eliminado correctamente");
-  } catch (error) {
-    console.error("No se pudo eliminar el alumno:", error);
-  }
-
-}*/
 eliminar = async (_id) => {
-  try {
-    await Axios.delete(`/alumnos/eliminar/${_id}`);
-    this.setState(prevState => ({
-      data: prevState.data.filter(item => item._id !== _id)
-    }), () => {
-      console.log("Se ha eliminado el elemento con id:", _id);
-      // Después de eliminar el registro, actualizamos los datos filtrados
-      this.filtrarAlumnos();
-    });
-  } catch (error) {
-    console.error("Error al eliminar:", error);
+  // Confirmación con SweetAlert2
+  const confirmacion = await Swal.fire({
+    title: '¿Seguro que quieres eliminar?',
+    text: 'Esta acción no se puede deshacer',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Sí, eliminar'
+  });
+
+  // Si el usuario confirma la eliminación
+  if (confirmacion.isConfirmed) {
+    try {
+      await Axios.delete(`/alumnos/eliminar/${_id}`);
+      // Eliminar el elemento de la lista en el estado
+      this.setState(prevState => ({
+        data: prevState.data.filter(item => item._id !== _id)
+      }), () => {
+        console.log("Se ha eliminado el elemento con id:", _id);
+        // Después de eliminar el registro, mostrar un mensaje de éxito
+        Swal.fire({
+          icon: 'success',
+          title: 'Eliminado',
+          text: 'El registro ha sido eliminado exitosamente'
+        });
+        // Después de eliminar el registro, actualizamos los datos filtrados
+        this.filtrarAlumnos();
+      });
+    } catch (error) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Error al eliminar'
+      });
+    }
   }
 }
 

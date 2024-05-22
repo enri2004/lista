@@ -12,8 +12,7 @@ export default function Soporte() {
     const [modalmensaje, setModalmensaje]= useState(false);
     const [formdatos,setFordatos]= useState({
         usuario:'',
-        apellido_paterno:'',
-        apellido_materno:'',
+        apellido:'',
         nombre:'',
         institucion:'',
         telefono:'',
@@ -69,8 +68,8 @@ export default function Soporte() {
                         Si tienes algún problema con la página, como lentitud de carga o dificultades para acceder con tu contraseña o usuario, por favor envía un mensaje detallando el problema a [correo electrónico]. Nos comprometemos a resolverlo lo antes posible.
                         Además, valoramos tus consejos e ideas para mejorar nuestro servicio. Si tienes alguna sugerencia o comentario, no dudes en compartirlo con nosotros. Estamos atentos a todas tus ideas para seguir mejorando. ¡Tu opinión cuenta!</p>
                     {
-                     <div class="form-floating" style={{position:"absolute", top:"70%", left:"30%"}}>
-                      <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style={{height:"200%", width:"200%"}}></textarea>
+                     <div className="form-floating" style={{position:"absolute", top:"70%", left:"30%"}}>
+                      <textarea className="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style={{height:"200%", width:"200%"}}></textarea>
                         <label for="floatingTextarea2" >tu comentario es importante</label>
                       </div>
                       
@@ -85,74 +84,67 @@ export default function Soporte() {
               
                 <form className="form">
                     <h2>Recuperar</h2>
-                <form class="row g-3 needs-validation" novalidate  style={{position:"absoluta", top:"80px",left:"10px", padding:"10px 10px 10px 10px"}}>
-                    <div class="col-md-4">
-                      <label for="validationCustom01" class="form-label">Apellido paterno</label>
-                      <input type="text" class="form-control" name="apellido_paterno" id="validationCustom01"  
+                <form className="row g-3 needs-validation"  style={{position:"absoluta", top:"80px",left:"10px", padding:"10px 10px 10px 10px"}}>
+                    <div className="col-md-4">
+                      <label for="validationCustom01" className="form-label">Apellidos</label>
+                      <input type="text" className="form-control" name="apellido" id="validationCustom01"  
                       onChange={ handleChange}
                       required />
                       <div class="valid-feedback">
                         Looks good!
                       </div>
                     </div>
+                    
+
                     <div class="col-md-4">
-                      <label for="validationCustom02" class="form-label">Apellido materno</label>
-                      <input type="text" class="form-control" name="apellido_materno" id="validationCustom02"  required 
-                      onChange={ handleChange}
-                      />
-                      <div class="valid-feedback">
-                        Looks good!
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <label for="validationCustomUsername" class="form-label">Nombre</label>
-                      <div class="input-group has-validation">
-                        <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="text" class="form-control" name="nombre"id="validationCustomUsername" aria-describedby="inputGroupPrepend" required 
+                      <label for="validationCustomUsername" className="form-label">Nombre</label>
+                      <div className="input-group has-validation">
+                        <span className="input-group-text" id="inputGroupPrepend">@</span>
+                        <input type="text" className="form-control" name="nombre"id="validationCustomUsername" aria-describedby="inputGroupPrepend" required 
                         onChange={ handleChange}
                         />
                       </div>
                     </div>
                     
-                    <div class="col-md-4">
-                      <label for="validationCustomUsername" class="form-label">Lugar</label>
-                      <div class="input-group has-validation">
-                        <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="text" class="form-control" name="lugar"id="validationCustomUsername" aria-describedby="inputGroupPrepend" required 
+                    <div className="col-md-4">
+                      <label for="validationCustomUsername" className="form-label">Lugar</label>
+                      <div className="input-group has-validation">
+                        <span className="input-group-text" id="inputGroupPrepend">@</span>
+                        <input type="text" className="form-control" name="lugar"id="validationCustomUsername" aria-describedby="inputGroupPrepend" required 
                         onChange={ handleChange}
                         />
                       </div>
                     </div>
-                    <div class="col-md-4">
-                      <label for="validationCustomUsername" class="form-label">telefono</label>
-                      <div class="input-group has-validation">
-                        <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="text" class="form-control" name="telefono" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required
+                    <div className="col-md-4">
+                      <label for="validationCustomUsername" className="form-label">telefono</label>
+                      <div className="input-group has-validation">
+                        <span className="input-group-text" id="inputGroupPrepend">@</span>
+                        <input type="text" className="form-control" name="telefono" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required
                         onChange={ handleChange}
                         />
                       </div>
                     </div>
-                    <div class="col-md-4">
-                      <label for="validationCustomUsername" class="form-label">escuela</label>
-                      <div class="input-group has-validation">
-                        <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="text" class="form-control" name="institucion" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required 
+                    <div className="col-md-4">
+                      <label for="validationCustomUsername" className="form-label">escuela</label>
+                      <div className="input-group has-validation">
+                        <span className="input-group-text" id="inputGroupPrepend">@</span>
+                        <input type="text" className="form-control" name="institucion" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required 
                         onChange={ handleChange}
                         />
                       </div>
                     </div>
-                    <div class="col-md-4">
-                      <label for="validationCustomUsername" class="form-label">Usuario</label>
-                      <div class="input-group has-validation">
-                        <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="text" class="form-control" name="usuario" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required
+                    <div className="col-md-4">
+                      <label for="validationCustomUsername" className="form-label">Usuario</label>
+                      <div className="input-group has-validation">
+                        <span className="input-group-text" id="inputGroupPrepend">@</span>
+                        <input type="text" className="form-control" name="usuario" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required
                         onChange={ handleChange}
                         />
                       </div>
                     </div>
 
-                    <div class="col-12">
-                      <Button class="btn btn-primary"  onClick={enviarDatos}>Recuperar</Button>
+                    <div className="col-12">
+                      <Button className="btn btn-primary"  onClick={enviarDatos}>Recuperar</Button>
                     </div>
                   </form>
                     
@@ -173,9 +165,9 @@ export default function Soporte() {
                         <FormGroup>
 
                         </FormGroup>
-                        <div class="space"></div>
+                        <div className="space"></div>
                         <FormGroup>
-                            <div class="space"></div>
+                            <div className="space"></div>
                         </FormGroup>
                     </ModalBody>
                 </ModalHeader>

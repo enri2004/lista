@@ -5,6 +5,7 @@ import Asistencia from "../components/Asistencia";
 import '../css/Datos_alumnos.css';
 import Axios from "../../servers/Axios";
 import '../css/Datos_alumnos.css'
+import Swal from 'sweetalert2'
 
 export default function Datos_alumnos(){
     const [Data, setData] = useState([]);
@@ -30,7 +31,7 @@ export default function Datos_alumnos(){
                 const response = await Axios.get("/Id_maestro", config);
                 const id_maestro = response.data.id_maestro;
                 
-                const alumnosResponse = await Axios.get("http://127.0.0.1:3000/alumnos");
+                const alumnosResponse = await Axios.get("https://api-rest-htj4.onrender.com/alumnos");
                 const allData = alumnosResponse.data;
                 
                 // Filtrar los datos de los alumnos por el id_maestro
@@ -65,7 +66,6 @@ export default function Datos_alumnos(){
     
             try {
                 await Axios.patch(`/alumnos/editar/${alumnoSeleccionado._id}`, paselista);
-                console.log("Se enviaron los datos correctamente");
                 const updatedData = Data.map((alumno) => {
                     if (alumno._id === alumnoSeleccionado._id) {
                         return { ...alumno, asistencia: asistencia };
@@ -74,6 +74,11 @@ export default function Datos_alumnos(){
                 });
                 setData(updatedData);
                 setModalEditar(false);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Pase De Lista',
+                    text: 'La lista ha sido modifcada exitosamente'
+                  });
             } catch (error) {
                 console.error("Error al enviar los datos:", error);
             }

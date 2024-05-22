@@ -3,6 +3,7 @@ import { PiUserFill } from "react-icons/pi";
 import { FaLock } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import '../css/Formulario.css';  
+import Swal from 'sweetalert2';
 import Axios from "../../servers/Axios";
 
 
@@ -11,7 +12,7 @@ export default function Formulario() {
   const Navigate = useNavigate();
   const [usuario, setUsuario] = useState("");
   const [contraseña, setContraseña] = useState("");
-
+ 
 
   const haldleVerificar=(e)=>{
     e.preventDefault();
@@ -25,10 +26,15 @@ export default function Formulario() {
 
   const botonActualizar = async (e) => {
     e.preventDefault();
+    Swal.fire({
+      title: 'Cargando...',
+      allowOutsideClick: false
+  });
+  Swal.showLoading();
     try {
         const response = await Axios.post("/login", { usuario, contraseña });
         const { access, refresh, roles } = response.data; // Extraer los tokens de la respuesta
-        
+        Swal.close();
         if (access && refresh) { // Verificar si los tokens están presentes en la respuesta
             localStorage.setItem("access_token", access); // Almacenar el token de acceso en el localStorage
             localStorage.setItem("refresh_token", refresh); // Almacenar el token de actualización en el localStorage
@@ -45,7 +51,7 @@ export default function Formulario() {
             console.log(access, refresh, roles)
             // Redirigir según el rol del usuario
             if (roles === "Usuario" || roles === "Administrador") {
-                Navigate(roles === "Usuario" ? "/Casa" : "/Admin_Home");      
+                Navigate(roles === "Usuario" ? "/Casa" : "/Perfil");      
             } else {
                 console.log("No se encuentra");
             }
@@ -53,9 +59,36 @@ export default function Formulario() {
             console.log("No se recibieron los tokens en la respuesta");
         }
     } catch (error) {
-        console.error('Error al enviar los datos', error);
-    }
-};
+        if (error.response.status === 500) {
+          Swal.fire({
+              icon: 'error',
+              title: 'Error',
+              text: 'Error del usuario'
+          })
+        
+      } else if (error.response.status === 400) {
+          const { msg } = error.response.data;
+          if (msg === "Password incorrecto") {
+              Swal.fire({
+                  icon: 'error',
+                  title: 'Error',
+                  text: 'Contraseña incorrecta'
+              });
+          } else if (msg === "Usuario inactivo") {
+              Swal.fire({
+                  icon: 'error',
+                  title: 'Error',
+                  text: 'Usuario inactivo'
+              });
+          } else if (msg === "El Usuario es obligatorio" || msg === "El password es obligatorio") {
+              Swal.fire({
+                  icon: 'error',
+                  title: 'Error',
+                  text: msg
+              });
+          }
+      }
+  } }
 
 
   return (
@@ -82,7 +115,7 @@ export default function Formulario() {
         <div>
           <input type="submit"  />
         </div>
-        <div class="recuperar">
+        <div className="recuperar">
           <p>olvidaste tu contraseña<Link to="/Soporte">Soporte</Link></p>
         </div>
       </form>
